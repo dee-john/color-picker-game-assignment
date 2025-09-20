@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="game-container">
+      <h1>🎨Color Picker Game</h1>
+      <p>Pick a color and try your luck!</p>
+      <button class="btn red" onclick="pickColor('red')">Red</button>
+      <button class="btn yellow" onclick="pickColor('yellow')">Yellow</button>
+      <button class="btn blue" onclick="pickColor('blue')">Blue</button>
+    </div>
+  </body>
+  <script>
+    function pickColor(color) {
+      let randomNum = Math.floor(Math.random() * 10); // 0-9
+      let chosenColor = "";
+
+      if (randomNum >= 0 && randomNum <= 3) {
+        chosenColor = "red";
+      } else if (randomNum >= 4 && randomNum <= 6) {
+        chosenColor = "yellow";
+      } else if (randomNum >= 7 && randomNum <= 9) {
+        chosenColor = "blue";
+      }
+
+      if (color === chosenColor) {
+        alert(
+          "🎉 You guessed right! Number was " +
+            randomNum +
+            " (" +
+            chosenColor +
+            ")"
+        );
+      } else {
+        alert(
+          "❌ Wrong guess! Number was " + randomNum + " (" + chosenColor + ")"
+        );
+      }
+    }
+  </script>
+</html>
